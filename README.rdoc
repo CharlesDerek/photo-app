@@ -5,7 +5,29 @@ rails s -b $IP -p $PORT
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-last on L227 Image Upload
+last on L233 Image Upload
+
+ISSUE AT MINUTE 6:54 
+
+1) if you run heroku logs error says compiling assets failed 
+prior running rake db:migrate didn't work due to pg 2.1 in production in Gfile giving issue so needs downgrade to 2.0
+
+
+///
+ ------------------------------
+remote:        Bundle completed (16.19s)
+remote:        Cleaning up the bundler cache.
+remote:        Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.16.1). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+remote:        Removing pg (0.21.0)
+remote:        The latest bundler is 1.16.1, but you are currently running 1.15.2.
+remote:        To update, run `gem install bundler`
+remote: -----> Installing node-v6.11.1-linux-x64
+remote: -----> Detecting rake tasks
+remote: -----> Preparing app for Rails asset pipeline
+remote:        Running: rake assets:precompile
+remote:        rake aborted!
+remote:        ArgumentError: Missing required arguments: aws_access_key_id, aws_secret_access_key
+///
 
 Things you may want to cover:
 
